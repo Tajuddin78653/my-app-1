@@ -5,10 +5,6 @@
 	<artifactId>myweb</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.9</version>
-		<configuration>
-			<source>1.8</source>
-                	<target>1.8</target>
-		<configuration>
 	<name>my-app</name>
 	<url>http://maven.apache.org</url>
 
