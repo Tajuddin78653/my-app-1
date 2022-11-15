@@ -1,10 +1,14 @@
 pipeline{
     agent any
     
+    parameters {
+  string defaultValue: 'Taj', description: 'Choose the name of person', name: 'name'
+}
+    
     stages{
       stage("Checking for Pipeline"){
         steps{
-          echo "Welcome to DevOps "
+          echo "Welcome to DevOps $name"
         }
       }
     }
