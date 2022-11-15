@@ -2,7 +2,7 @@ pipeline{
     agent any
     
     stages{
-      starge("Checking for Pipeline"){
+      stage("Checking for Pipeline"){
         steps{
           echo "Welcome to DevOps "
         }
