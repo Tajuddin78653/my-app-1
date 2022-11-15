@@ -3,12 +3,13 @@ pipeline{
     
     parameters {
                string defaultValue: 'Taj', description: 'Choose the name of person', name: 'name'
+               string defaultValue: 'Bangalore', description: 'Choose the Loction', name: 'location'
                }
     
     stages{
       stage("Checking for Pipeline"){
         steps{
-          echo "Welcome to DevOps $name"
+          echo "Welcome to DevOps $name from $location"
         }
       }
     }
