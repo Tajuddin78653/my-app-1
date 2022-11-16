@@ -6,6 +6,23 @@ pipeline{
         steps{
           sh "mvn clean package"
         }
+      }stage("Tomcat Devploy"){
+        steps{
+          sshagent{['Otomcate']}
+          sh "mv target/*.war target/taz.war"
+          sh "scp target/*.war ec2-user@172.31.11.226:/opt/tomcat-stage/webapps"
+          sh "ssh ec2-user@172.31.11.226 /opt/tomcate-stage/bin/shutdown.sh"
+          sh "ssh ec2-user@172.31.11.226 /opt/tomcate-stage/bin/startup.sh"
+          
+        }
       }
+    }
+    post {
+       success {
+           echo "Send success email"
+        }
+       failure {
+           echo "Send failure email"
+        }
     }
 }
