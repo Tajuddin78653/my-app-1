@@ -1,5 +1,7 @@
 pipeline{
-    agent { label "Slave-linux" }
+    agent { 
+            label "Slave-linux" 
+          }
     
     parameters {
                string defaultValue: 'Taj', description: 'Choose the name of person', name: 'name'
