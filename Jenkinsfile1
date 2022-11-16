@@ -10,7 +10,7 @@ pipeline{
     stages{
       stage("Checking for Pipeline"){
         steps{
-          echo "Welcome to DevOps $name from $location $centry"
+          echo "Welcome to DevOps ${params}"
         }
       }
     }
