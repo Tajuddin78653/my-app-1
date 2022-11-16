@@ -3,16 +3,10 @@ pipeline{
             label "Slave-linux" 
           }
     
-    parameters {
-               string defaultValue: 'Taj', description: 'Choose the name of person', name: 'name'
-               string defaultValue: 'Bangalore', description: 'Choose the Loction', name: 'location'
-               string defaultValue: 'Germany', description: 'Choose the Loction', name: 'centry'
-               }
-    
     stages{
-      stage("Checking for Pipeline"){
+      stage("checking for Maven Build"){
         steps{
-          echo "Welcome to DevOps ${params}"
+          sh "mvn clean package"
         }
       }
     }
